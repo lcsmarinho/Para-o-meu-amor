@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Lora", Garamond, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-rose-base: #F4DDE4;
+  --color-rose-soft: #FBEFF2;
+  --color-apple-green: #B8CD91;
+  --color-pastel-brown: #A98473;
+  --color-dark-brown: #66524B;
+  --color-serene-blue: #A9C9D8;
+  --color-ivory: #FFF9F4;
+}
+
+/* Custom delicate styling */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    background-color: #F4DDE4;
+    color: #66524B;
+  }
+}
+
+/* Subtle paper texture overlay */
+.paper-card {
+  background-color: #FFF9F4;
+  border: 1px solid rgba(169, 132, 115, 0.18);
+  box-shadow: 0 4px 20px -2px rgba(102, 82, 75, 0.05), 0 2px 6px -1px rgba(102, 82, 75, 0.03);
+}
+
+.paper-card:hover {
+  border-color: rgba(169, 132, 115, 0.32);
+  box-shadow: 0 10px 25px -4px rgba(102, 82, 75, 0.08), 0 4px 10px -2px rgba(102, 82, 75, 0.04);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F4DDE4;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8B7BA;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A98473;
+}

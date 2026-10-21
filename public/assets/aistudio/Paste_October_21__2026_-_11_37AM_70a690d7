@@ -1,0 +1,976 @@
+# PROJETO: UM AMOR QUE CONTINUA SENDO ESCRITO
+
+## 1. VISÃO GERAL E PROPÓSITO
+
+Atue como um engenheiro de software frontend sênior, arquiteto de aplicações estáticas, designer de interfaces e especialista em experiência do usuário, com grande sensibilidade artística, literária e editorial.
+
+Sua missão é desenvolver um site romântico, sofisticado, delicado e atemporal, dedicado à minha namorada.
+
+Este site será uma declaração de amor permanente, um espaço digital que crescerá com o passar dos anos, reunindo poemas, textos, fotografias e músicas que representam nossa história.
+
+Não quero um site romântico genérico. Quero uma experiência que pareça uma mistura entre:
+
+- Um livro de literatura cuidadosamente diagramado.
+- Um diário de amor escrito ao longo de uma vida.
+- Uma biblioteca particular de memórias.
+- Um álbum de fotografias afetivas.
+- Um jardim delicado, sereno e acolhedor.
+
+O resultado deve transmitir intimidade, sensibilidade, permanência, beleza e carinho.
+
+**Princípio fundamental:** o site deve parecer um lugar onde o amor continua sendo escrito, não uma homenagem feita apenas uma vez.
+
+A experiência precisa ser especialmente bonita em celulares, mas também excelente em computadores e tablets.
+
+Todo o conteúdo textual deve estar em português brasileiro.
+
+---
+
+## 2. REQUISITOS TÉCNICOS E ARQUITETURA
+
+Desenvolva a aplicação utilizando:
+
+- React com TypeScript.
+- Vite como ferramenta de desenvolvimento e compilação.
+- Tailwind CSS para estilização.
+- React Router para navegação.
+- Bibliotecas de animação leves, quando realmente necessárias.
+- Lucide React para ícones discretos e elegantes.
+
+A aplicação deve ser completamente estática.
+
+**Não utilizar:**
+- Backend.
+- Banco de dados.
+- Firebase.
+- Supabase.
+- APIs externas para armazenar conteúdo.
+- Sistemas de autenticação.
+- CMS.
+- Serviços externos obrigatórios para o funcionamento.
+
+Todo o conteúdo será armazenado localmente no projeto, utilizando arquivos JSON e pastas de mídia.
+
+O site será desenvolvido no Google AI Studio e deverá ser compatível com o ambiente de execução e publicação disponível na plataforma.
+
+Não presumir que o ambiente de hospedagem disponibiliza armazenamento persistente ou acesso dinâmico ao sistema de arquivos.
+
+O conteúdo será atualizado no código-fonte do projeto e publicado novamente quando necessário.
+
+### Descoberta automática dos arquivos
+
+Como não haverá backend, implemente um mecanismo de descoberta de imagens e músicas durante a compilação.
+
+Utilize `import.meta.glob` do Vite ou solução equivalente para identificar os arquivos presentes nas pastas de mídia.
+
+O mecanismo deve:
+
+1. Identificar automaticamente os arquivos suportados.
+2. Construir uma lista utilizável pela aplicação.
+3. Relacionar imagens aos metadados do JSON.
+4. Construir a playlist de músicas.
+5. Funcionar na versão compilada e publicada.
+6. Não depender de acesso ao sistema de arquivos no navegador.
+
+Não criar uma implementação que funcione apenas no servidor de desenvolvimento.
+
+---
+
+## 3. IDENTIDADE VISUAL
+
+A direção artística é absolutamente fundamental.
+
+O site precisa ter uma estética literária, delicada, acolhedora, romântica e sofisticada.
+
+Evite qualquer aparência de template comercial, cartão de Dia dos Namorados ou site de casamento genérico.
+
+### Paleta de cores
+
+Utilize as seguintes cores como base, podendo ajustar discretamente as tonalidades para obter harmonia:
+
+**Rosa floral pastel — #F4DDE4**
+
+Cor principal, predominante nos fundos. Deve lembrar pétalas de rosas claras, papel delicado e flores suaves.
+
+**Rosa claro — #FBEFF2**
+
+Para superfícies, detalhes e transições.
+
+**Verde maçã suave — #B8CD91**
+
+Verde fresco, natural e acolhedor, sem saturação excessiva.
+
+**Marrom pastel — #A98473**
+
+Para detalhes, linhas, ornamentos e alguns elementos de interface.
+
+**Marrom escuro suave — #66524B**
+
+Para textos principais, garantindo leitura confortável.
+
+**Azul amigável — #A9C9D8**
+
+Azul delicado, associado à tranquilidade e à serenidade.
+
+**Marfim — #FFF9F4**
+
+Para cartões, páginas de leitura e superfícies que lembrem papel.
+
+### Aplicação das cores
+
+- O rosa deve ser a identidade predominante.
+- O marfim deve dar descanso visual.
+- O marrom deve conferir sofisticação editorial.
+- O verde deve aparecer como acento natural.
+- O azul deve ser utilizado pontualmente para equilíbrio.
+- Evitar contrastes agressivos, mantendo acessibilidade de leitura.
+
+### Tipografia
+
+Minha namorada ama literatura. A tipografia deve refletir isso.
+
+Utilize fontes como:
+
+- Cormorant Garamond para títulos expressivos.
+- Libre Baskerville ou Lora para poemas e textos.
+- DM Sans ou Nunito Sans para controles e pequenos elementos de interface.
+
+Priorize a legibilidade, a beleza editorial e a sensação de estar lendo um livro.
+
+Evite tipografias excessivamente decorativas ou manuscritas de difícil leitura.
+
+### Linguagem visual
+
+Utilize:
+
+- Ornamentos botânicos muito discretos e estilizados.
+- Texturas suaves que lembrem papel de qualidade.
+- Sombras delicadas.
+- Bordas finas.
+- Espaçamento generoso.
+- Cantos suavemente arredondados.
+- Transições fluidas.
+- Microinterações elegantes.
+
+Elementos florais devem ser sutis e fazer sentido na composição, nunca parecer adesivos ou decoração aleatória.
+
+A estética deve continuar bonita e relevante daqui a muitos anos.
+
+---
+
+## 4. ESTRUTURA DO SITE
+
+O site terá quatro páginas principais:
+
+1. Página inicial.
+2. Nunca cansarei de te dizer — Poemas.
+3. Nunca deixarei de pensar — Textos.
+4. Nunca deixaremos de viver — Fotografias.
+
+Todas devem compartilhar a mesma identidade visual e possuir navegação intuitiva.
+
+### Navegação
+
+Criar um cabeçalho discreto, elegante e responsivo.
+
+Em computadores, utilizar navegação horizontal.
+
+Em celulares, utilizar um menu compacto e acessível.
+
+Os títulos das páginas devem ser apresentados de maneira elegante, sem perder sua identidade literária.
+
+A navegação deve parecer uma transição entre capítulos de um mesmo livro.
+
+---
+
+## 5. PÁGINA INICIAL — A PORTA DE ENTRADA DO NOSSO UNIVERSO
+
+Esta é a página mais importante do projeto em termos de impacto emocional.
+
+Ela deve ser visualmente memorável, declarativa e convidativa.
+
+Quero que minha namorada sinta que está entrando em um lugar construído especialmente para ela.
+
+### Seção principal
+
+Criar uma composição editorial com:
+
+- Um título romântico marcante.
+- Uma pequena declaração de amor.
+- Tipografia literária.
+- Fundo rosa floral pastel.
+- Elementos visuais delicados.
+- Animações de entrada discretas.
+
+Utilizar inicialmente o título:
+
+**"Há amores que merecem ser escritos para sempre."**
+
+E o texto:
+
+"Este é o lugar onde guardo aquilo que as palavras tentam alcançar, o que os pensamentos insistem em lembrar e o que os nossos dias transformam em eternidade. Um pequeno universo feito de tudo aquilo que vivemos, sentimos e ainda viveremos."
+
+Criar uma forma visualmente bonita de apresentar essa declaração.
+
+### Exploração das páginas
+
+Abaixo da introdução, criar três grandes seções ou cartões editoriais que convidem à exploração.
+
+**Nunca cansarei de te dizer**
+
+Descrição:
+
+"Porque existem sentimentos que merecem ser transformados em versos, quantas vezes forem necessárias."
+
+Destino: página dos poemas.
+
+**Nunca deixarei de pensar**
+
+Descrição:
+
+"Porque mesmo quando não estou escrevendo, existe sempre alguma parte de mim pensando em você."
+
+Destino: página dos textos.
+
+**Nunca deixaremos de viver**
+
+Descrição:
+
+"Porque cada fotografia guarda um instante que o tempo jamais poderá nos tirar."
+
+Destino: página das fotografias.
+
+Esses cartões devem ser bonitos, clicáveis e possuir transições suaves.
+
+Não quero apenas três botões convencionais.
+
+Quero uma apresentação orgânica, editorial e sensível, que desperte curiosidade.
+
+### Detalhes adicionais
+
+Criar um rodapé romântico e discreto, com a frase:
+
+"Enquanto houver amanhã, haverá mais uma página para nós."
+
+O rodapé pode aparecer em todas as páginas.
+
+---
+
+## 6. PÁGINA DE POEMAS
+
+Nome obrigatório:
+
+# Nunca cansarei de te dizer
+
+Esta página será dedicada exclusivamente aos poemas.
+
+Todos os poemas deverão ser carregados de um arquivo chamado:
+
+`src/data/Poemas.json`
+
+### Estrutura do JSON
+
+Cada poema deverá conter:
+
+- `id`: identificador único e estável.
+- `titulo`: título do poema.
+- `data`: data em formato ISO `YYYY-MM-DD`.
+- `mensagemExibicao`: pequeno texto apresentado no cartão.
+- `corpo`: conteúdo completo do poema.
+
+Exemplo:
+
+```json
+[
+  {
+    "id": "poema-001",
+    "titulo": "O lugar onde o mundo descansa",
+    "data": "2026-10-21",
+    "mensagemExibicao": "Alguns lugares não existem nos mapas.",
+    "corpo": "Há um silêncio bonito no teu abraço,\ncomo se o mundo aprendesse a descansar.\nE em cada pequeno instante ao teu lado,\neu descubro outra maneira de amar."
+  }
+]
+```
+
+### Exibição dos poemas
+
+Criar uma grade responsiva de cartões.
+
+Cada cartão deve apresentar:
+
+- Título.
+- Data formatada em português brasileiro.
+- Mensagem de exibição.
+- Um pequeno elemento visual indicando que é possível abrir o poema.
+
+Os cartões devem ter proporções harmoniosas, com altura visual consistente e espaçamento elegante.
+
+O conteúdo completo do poema não deve aparecer diretamente no cartão.
+
+### Expansão
+
+Ao clicar em um cartão, abrir um modal elegante, semelhante a uma página de livro.
+
+O modal deverá:
+
+- Exibir o título completo.
+- Exibir a data.
+- Exibir o corpo integral.
+- Preservar as quebras de linha e estrofes.
+- Possuir rolagem interna quando necessário.
+- Funcionar perfeitamente em celulares.
+- Permitir fechamento por botão, tecla Escape e clique fora, quando apropriado.
+- Impedir que o conteúdo fique cortado.
+- Manter a leitura confortável.
+
+No celular, o modal pode ocupar praticamente toda a tela, com margens apropriadas.
+
+### Ordenação e paginação
+
+Os poemas devem aparecer obrigatoriamente em **ordem cronológica decrescente**, do mais recente para o mais antigo.
+
+O sistema deve:
+
+1. Ordenar pela data.
+2. Utilizar o ID como critério estável de desempate.
+3. Paginar automaticamente.
+4. Exibir 9 poemas por página em computadores.
+5. Adaptar a quantidade ou a disposição em celulares.
+6. Apresentar controles elegantes de navegação entre páginas.
+7. Voltar ao topo da listagem ao trocar de página.
+
+A ordenação deve ocorrer antes da paginação.
+
+Adicionar novos poemas ao JSON deve ser suficiente para que apareçam automaticamente na ordem correta, sem modificar componentes.
+
+---
+
+## 7. PÁGINA DE TEXTOS
+
+Nome obrigatório:
+
+# Nunca deixarei de pensar
+
+Esta página será dedicada aos meus pensamentos, reflexões, cartas e textos sobre nosso relacionamento.
+
+Todos os textos deverão ser carregados de:
+
+`src/data/Textos.json`
+
+### Estrutura do JSON
+
+Cada texto deverá conter:
+
+- `id`: identificador único.
+- `titulo`: título do texto.
+- `subtitulo`: subtítulo apresentado no cartão e na leitura.
+- `data`: data em formato ISO.
+- `mensagemExibicao`: resumo ou mensagem de apresentação.
+- `corpo`: texto integral.
+
+Exemplo:
+
+```json
+[
+  {
+    "id": "texto-001",
+    "titulo": "Sobre a sorte de encontrar você",
+    "subtitulo": "Uma reflexão sobre os encontros que mudam tudo",
+    "data": "2026-10-21",
+    "mensagemExibicao": "Às vezes penso em quantas pequenas coincidências nos trouxeram até aqui.",
+    "corpo": "Existem encontros que parecem pequenos quando acontecem, mas que, com o tempo, revelam a dimensão de tudo aquilo que transformaram.\n\nEncontrar você foi descobrir que a vida ainda guardava formas de beleza que eu nem sabia procurar."
+  }
+]
+```
+
+### Exibição
+
+Criar cartões editoriais com:
+
+- Título.
+- Subtítulo.
+- Data.
+- Mensagem de exibição.
+
+Os cartões devem ter aparência de pequenos fragmentos de um livro.
+
+### Leitura expandida
+
+Ao clicar, abrir um modal ou painel de leitura elegante.
+
+O texto completo deverá possuir:
+
+- Excelente legibilidade.
+- Parágrafos bem espaçados.
+- Largura máxima de leitura confortável.
+- Rolagem apropriada.
+- Título e subtítulo destacados.
+- Data discreta.
+- Tipografia literária.
+
+Não cortar textos longos.
+
+### Paginação
+
+Aplicar o mesmo comportamento dos poemas:
+
+- Ordenação decrescente por data.
+- Conteúdo mais recente primeiro.
+- Paginação de 9 itens.
+- Navegação elegante.
+- Atualização automática a partir do JSON.
+
+---
+
+## 8. PÁGINA DE FOTOGRAFIAS
+
+Nome obrigatório:
+
+# Nunca deixaremos de viver
+
+Esta página será nosso álbum de memórias.
+
+As fotografias estarão em uma pasta chamada:
+
+`src/assets/Nossas fotos/`
+
+E os metadados estarão em:
+
+`src/data/Fotos.json`
+
+### Funcionamento
+
+Quero poder adicionar novas imagens simplesmente colocando os arquivos dentro da pasta "Nossas fotos".
+
+A aplicação deverá identificar automaticamente as imagens durante a compilação, sem exigir imports manuais.
+
+O JSON servirá para associar informações a cada fotografia por meio do nome exato do arquivo.
+
+### Estrutura do JSON
+
+```json
+[
+  {
+    "arquivo": "nosso-primeiro-encontro.jpg",
+    "data": "2026-02-14",
+    "mensagemExibicao": "O dia em que uma história muito bonita começou."
+  },
+  {
+    "arquivo": "tarde-na-praia.png",
+    "data": "2026-07-20",
+    "mensagemExibicao": "O mar estava bonito, mas eu só conseguia olhar para você."
+  }
+]
+```
+
+### Associação entre imagem e JSON
+
+O campo `arquivo` deverá corresponder exatamente ao nome da imagem.
+
+A aplicação deverá:
+
+1. Descobrir todas as imagens da pasta.
+2. Procurar os metadados correspondentes no JSON.
+3. Relacionar as informações pelo nome do arquivo.
+4. Exibir a fotografia mesmo quando não houver metadados.
+5. Utilizar uma mensagem padrão delicada quando a mensagem estiver ausente.
+6. Evitar erros quando um arquivo listado no JSON não existir.
+7. Exibir avisos úteis no desenvolvimento para associações inválidas.
+
+Para imagens sem data cadastrada, usar um critério de ordenação previsível, como posicioná-las depois das imagens datadas, ordenadas pelo nome do arquivo.
+
+Não tentar inferir a data da fotografia pelo sistema de arquivos do navegador.
+
+### Layout das fotografias
+
+Criar uma galeria elegante, organizada e responsiva.
+
+**Requisito essencial: todas as fotografias devem ocupar quadros com a mesma proporção visual, independentemente das dimensões originais.**
+
+Utilizar preferencialmente uma proporção de 4:5 nos cartões.
+
+Aplicar:
+
+- `aspect-ratio: 4 / 5`
+- `object-fit: cover`
+- `object-position: center`
+
+Garantir que imagens horizontais, verticais e quadradas tenham apresentação uniforme.
+
+A galeria deve parecer uma coleção de fotografias cuidadosamente organizada.
+
+Não utilizar masonry com alturas desiguais.
+
+### Visualização ampliada
+
+Ao clicar em uma fotografia, abrir um lightbox.
+
+O lightbox deverá:
+
+- Mostrar a fotografia inteira, sem cortes.
+- Preservar a proporção original.
+- Exibir a mensagem cadastrada.
+- Exibir a data.
+- Permitir avançar e voltar entre fotografias.
+- Permitir fechamento.
+- Funcionar com gestos em dispositivos móveis, quando viável.
+- Permitir navegação por teclado.
+- Possuir fundo suave e elegante.
+
+Na galeria, usar recorte uniforme.
+
+Na visualização ampliada, usar `object-fit: contain`.
+
+### Ordenação e paginação
+
+Ordenar as fotografias da mais recente para a mais antiga, utilizando as datas do JSON.
+
+Exibir 12 fotografias por página.
+
+Permitir navegar pelas páginas sem recarregar o site.
+
+Não modificar a ordem dos arquivos originais.
+
+---
+
+## 9. SISTEMA DE MÚSICA AMBIENTE
+
+A música é parte essencial da experiência.
+
+Criar uma pasta chamada:
+
+`src/assets/Músicas/`
+
+Todas as músicas suportadas colocadas nessa pasta deverão ser descobertas automaticamente durante a compilação.
+
+Não exigir cadastro de cada música em JSON.
+
+Não exigir nomes específicos.
+
+### Playlist automática
+
+A aplicação deverá:
+
+- Detectar todas as músicas suportadas.
+- Criar uma playlist.
+- Reproduzir as músicas sequencialmente.
+- Ao terminar a última música, voltar para a primeira.
+- Manter a reprodução em loop.
+- Não reiniciar a música quando o usuário mudar de página.
+- Preservar o estado do player durante a navegação.
+
+Ordenar inicialmente as músicas alfabeticamente pelo nome do arquivo, para garantir uma ordem previsível.
+
+### Comportamento de reprodução
+
+Tentar iniciar a música quando o usuário entrar no site, respeitando as políticas dos navegadores.
+
+Como navegadores podem bloquear reprodução automática com som, criar uma alternativa elegante:
+
+Um pequeno convite visual para ativar a música, com uma frase como:
+
+"Esta história também tem uma trilha sonora."
+
+E um botão:
+
+"Ouvir nossa história"
+
+A reprodução deverá iniciar após a interação do usuário.
+
+Não utilizar soluções que tentem contornar as restrições dos navegadores.
+
+### Player flutuante
+
+Criar um pequeno botão flutuante com ícone musical.
+
+O botão deverá:
+
+- Permanecer disponível em todas as páginas.
+- Ser discreto.
+- Combinar com a identidade visual.
+- Não atrapalhar a leitura.
+- Ser confortável para uso no celular.
+- Possuir posição ajustável pelo usuário.
+
+Ao clicar, expandir um painel delicado com:
+
+- Reproduzir.
+- Pausar.
+- Música anterior.
+- Próxima música.
+- Aumentar volume.
+- Diminuir volume.
+- Controle deslizante de volume.
+- Nome da música atual.
+- Indicador de reprodução.
+
+### Posicionamento
+
+Permitir arrastar o player para outra posição da tela.
+
+Implementar limites para impedir que o botão desapareça fora da área visível.
+
+Preservar a posição escolhida utilizando `localStorage`, quando disponível.
+
+O painel expandido deverá se reposicionar automaticamente para permanecer visível dentro da tela.
+
+### Persistência
+
+Utilizar um contexto React ou componente persistente fora das rotas para manter o áudio durante a navegação.
+
+Salvar preferências como volume e posição do player em `localStorage`.
+
+A aplicação deve funcionar mesmo quando a pasta de músicas estiver vazia, apresentando um estado apropriado sem erros.
+
+---
+
+## 10. EXPERIÊNCIA E ANIMAÇÕES
+
+Quero um site vivo, mas não excessivamente animado.
+
+Implementar:
+
+- Transições suaves entre páginas.
+- Animações discretas de entrada.
+- Efeitos leves ao passar o mouse sobre cartões.
+- Expansão suave de modais.
+- Feedback visual nos controles.
+- Movimentos naturais e delicados.
+
+Evitar:
+
+- Corações caindo pela tela.
+- Partículas excessivas.
+- Glitter.
+- Animações infantis.
+- Efeitos chamativos.
+- Elementos que prejudiquem a leitura.
+
+O romantismo deve surgir da composição, da tipografia e da experiência, não de exageros visuais.
+
+Respeitar a preferência do sistema por movimento reduzido (`prefers-reduced-motion`).
+
+---
+
+## 11. RESPONSIVIDADE E ACESSIBILIDADE
+
+O site deve funcionar perfeitamente em:
+
+- Smartphones pequenos.
+- Smartphones grandes.
+- Tablets.
+- Notebooks.
+- Monitores desktop.
+
+Aplicar abordagem mobile-first.
+
+Garantir:
+
+- Contraste adequado para leitura.
+- Textos com tamanhos confortáveis.
+- Botões acessíveis ao toque.
+- Navegação por teclado.
+- Estados de foco visíveis.
+- Atributos ARIA quando necessários.
+- Textos alternativos nas imagens.
+- Modais com gerenciamento correto de foco.
+- Bloqueio da rolagem da página de fundo enquanto um modal estiver aberto.
+- Retorno do foco ao elemento que abriu o modal.
+- Ausência de rolagem horizontal indesejada.
+
+Os poemas devem preservar suas quebras de linha, inclusive em dispositivos pequenos.
+
+---
+
+## 12. ESTRUTURA DE PASTAS
+
+Organize o projeto aproximadamente assim:
+
+```text
+src/
+├── assets/
+│   ├── Nossas fotos/
+│   └── Músicas/
+├── components/
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── PoemaCard.tsx
+│   ├── TextoCard.tsx
+│   ├── FotoCard.tsx
+│   ├── ReadingModal.tsx
+│   ├── PhotoLightbox.tsx
+│   ├── MusicPlayer.tsx
+│   └── Pagination.tsx
+├── contexts/
+│   └── MusicContext.tsx
+├── data/
+│   ├── Poemas.json
+│   ├── Textos.json
+│   └── Fotos.json
+├── hooks/
+├── lib/
+│   ├── content.ts
+│   └── media.ts
+├── pages/
+│   ├── Home.tsx
+│   ├── Poemas.tsx
+│   ├── Textos.tsx
+│   └── Fotos.tsx
+├── styles/
+├── App.tsx
+└── main.tsx
+```
+
+Pode ajustar a estrutura caso exista uma solução tecnicamente melhor, desde que preserve a separação de responsabilidades e os nomes dos arquivos JSON e pastas de mídia solicitados.
+
+---
+
+## 13. MANUTENÇÃO SIMPLES E CONTEÚDO INCREMENTAL
+
+Este é um requisito obrigatório.
+
+O site será atualizado durante muitos anos.
+
+Quero que adicionar conteúdo seja extremamente simples.
+
+### Para adicionar um poema
+
+Basta inserir um novo objeto em `Poemas.json`.
+
+Nenhum componente deverá precisar ser modificado.
+
+### Para adicionar um texto
+
+Basta inserir um novo objeto em `Textos.json`.
+
+Nenhum componente deverá precisar ser modificado.
+
+### Para adicionar uma fotografia
+
+Basta colocar a imagem na pasta `Nossas fotos`.
+
+Ela deverá aparecer automaticamente após a atualização e publicação do projeto.
+
+Caso queira adicionar data e mensagem, basta cadastrar o nome do arquivo em `Fotos.json`.
+
+### Para adicionar uma música
+
+Basta colocar o arquivo de áudio na pasta `Músicas`.
+
+Ela deverá ser incluída automaticamente na playlist após a atualização e publicação.
+
+### Regras de segurança e estabilidade
+
+Implementar tratamento para:
+
+- JSON vazio.
+- Ausência de conteúdo.
+- Campos opcionais ausentes.
+- Datas inválidas.
+- Arquivos de mídia não encontrados.
+- Falha de carregamento de imagem.
+- Falha de reprodução de áudio.
+- IDs duplicados.
+- Arquivos com nomes contendo espaços ou caracteres acentuados.
+
+A aplicação não deverá apresentar uma tela em branco por causa de um único registro problemático.
+
+---
+
+## 14. DOCUMENTAÇÃO OBRIGATÓRIA
+
+Criar um arquivo `README.md` completo, em português brasileiro.
+
+A documentação deve explicar, de forma simples e didática:
+
+### Instalação e execução
+
+- Como instalar as dependências.
+- Como iniciar o projeto.
+- Como gerar a versão de produção.
+- Como visualizar a versão compilada.
+- Como atualizar e republicar o site no ambiente disponível.
+
+### Poemas
+
+- Onde fica `Poemas.json`.
+- Estrutura dos campos.
+- Exemplo completo de cadastro.
+- Como utilizar quebras de linha.
+- Como definir a data.
+- Como a ordenação funciona.
+
+### Textos
+
+- Onde fica `Textos.json`.
+- Estrutura dos campos.
+- Exemplo de cadastro.
+- Como escrever textos com vários parágrafos.
+- Como a paginação funciona.
+
+### Fotografias
+
+- Onde fica a pasta `Nossas fotos`.
+- Como adicionar imagens.
+- Como relacioná-las com `Fotos.json`.
+- Quais formatos são suportados.
+
+Priorizar:
+
+- JPG/JPEG.
+- PNG.
+- WebP.
+- AVIF.
+- GIF.
+
+Explicar eventuais diferenças de suporte entre navegadores.
+
+Explicar que os quadros da galeria terão proporção uniforme e que a imagem original será preservada na visualização ampliada.
+
+### Músicas
+
+- Onde fica a pasta `Músicas`.
+- Como adicionar novas músicas.
+- Como funciona a playlist.
+- Como funciona o loop.
+- Como funciona o volume.
+- Como funciona a reprodução automática.
+
+Documentar os formatos aceitos pela implementação, priorizando:
+
+- MP3.
+- WAV.
+- OGG.
+- M4A/AAC.
+
+Explicar que o suporte real a determinados codecs e formatos pode variar conforme o navegador.
+
+Não prometer compatibilidade universal.
+
+### Atualização do site
+
+Explicar claramente que:
+
+- O site não utiliza backend.
+- As alterações são feitas nos arquivos do projeto.
+- Novos conteúdos exigem uma nova compilação/publicação.
+- Os arquivos não são enviados dinamicamente por visitantes.
+- A persistência do conteúdo depende da preservação do projeto e de seus arquivos.
+
+Incluir uma seção de boas práticas para backup dos JSONs, imagens e músicas, pensando na preservação desse acervo durante muitos anos.
+
+---
+
+## 15. QUALIDADE DO CÓDIGO
+
+O código deve ser:
+
+- Organizado.
+- Modular.
+- Tipado.
+- Reutilizável.
+- Legível.
+- Fácil de manter.
+- Sem dependências desnecessárias.
+
+Evitar arquivos gigantes que concentrem toda a aplicação.
+
+Separar componentes, páginas, lógica de conteúdo e estilos.
+
+Criar tipos TypeScript para poemas, textos e fotografias.
+
+Centralizar a lógica de ordenação, paginação e descoberta de mídia.
+
+Não duplicar lógica desnecessariamente.
+
+Garantir que os exemplos JSON sejam válidos.
+
+Garantir que o projeto compile sem erros.
+
+---
+
+## 16. REFINAMENTO VISUAL
+
+Não quero apenas que os requisitos funcionais sejam cumpridos.
+
+Quero um projeto com qualidade visual elevada.
+
+Trate cada detalhe como parte de uma experiência afetiva.
+
+As páginas devem possuir:
+
+- Hierarquia tipográfica refinada.
+- Excelente equilíbrio entre texto e espaço vazio.
+- Composições responsivas.
+- Identidade visual consistente.
+- Cartões com acabamento elegante.
+- Modais bonitos e confortáveis.
+- Navegação intuitiva.
+- Pequenos detalhes editoriais.
+
+A página inicial deve ter uma presença visual especialmente forte.
+
+Os poemas devem parecer pequenas obras literárias.
+
+Os textos devem parecer páginas de um diário pessoal.
+
+As fotografias devem parecer memórias cuidadosamente guardadas.
+
+A música deve integrar a experiência sem interrompê-la.
+
+O resultado não pode parecer uma demonstração técnica ou um template comum.
+
+---
+
+## 17. CRITÉRIOS DE ACEITAÇÃO
+
+Antes de considerar o projeto concluído, verifique:
+
+1. A página inicial apresenta a declaração e os três caminhos de navegação.
+2. Os poemas são carregados exclusivamente de `Poemas.json`.
+3. Os textos são carregados exclusivamente de `Textos.json`.
+4. As fotografias são descobertas automaticamente na pasta.
+5. As fotografias são associadas aos metadados pelo nome.
+6. Todos os cartões de fotografia possuem a mesma proporção.
+7. Os poemas e textos abrem corretamente em modais.
+8. A ordenação é decrescente por data.
+9. A paginação funciona corretamente.
+10. A playlist detecta automaticamente os arquivos suportados.
+11. A música continua tocando durante a navegação.
+12. O player flutuante pode ser reposicionado.
+13. O volume pode ser controlado.
+14. O site funciona sem backend.
+15. O layout funciona perfeitamente em celulares.
+16. Os estados vazios e erros são tratados.
+17. O README explica todos os procedimentos de manutenção.
+18. O projeto compila e pode ser publicado como site estático.
+
+---
+
+## 18. ORIENTAÇÃO FINAL
+
+Quero que você construa a aplicação completa, não apenas um protótipo visual.
+
+Implemente os componentes, rotas, arquivos JSON de exemplo, descoberta automática de mídias, player de música, estilos, paginação, modais e documentação.
+
+Não substitua funcionalidades por botões fictícios.
+
+Não utilize conteúdo remoto como dependência para fotografias e músicas.
+
+Não invente imagens pessoais do casal. Caso a pasta esteja vazia, utilize um estado vazio visualmente bonito, convidando à inclusão das primeiras memórias.
+
+Dê especial atenção à estética e à experiência de leitura.
+
+**A filosofia do projeto é simples:**
+
+Este site começa pequeno, mas deve estar preparado para guardar uma vida inteira.
+
+Cada poema será uma nova maneira de dizer que amo.
+
+Cada texto será uma nova maneira de mostrar que penso nela.
+
+Cada fotografia será uma prova de que continuamos vivendo nossa história.
+
+E cada música será uma maneira de fazer tudo isso continuar existindo, mesmo nos instantes em que não houver palavras.
+
+Crie um lugar digital que seja digno dessa intenção.

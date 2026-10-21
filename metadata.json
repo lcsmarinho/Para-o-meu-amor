@@ -1,0 +1,6 @@
+{
+  "name": "Um Amor Que Continua Sendo Escrito",
+  "description": "Um refúgio literário, delicado e atemporal para celebrar nosso amor através de poemas, textos, fotografias e música.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
