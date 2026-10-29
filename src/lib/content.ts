@@ -33,7 +33,18 @@ export function getPoemas(): Poema[] {
       (p): p is Poema => Boolean(p && typeof p === 'object' && p.id && p.titulo)
     );
 
-    return [...validos].sort((a, b) => {
+    // Salvaguarda contra IDs duplicados
+    const seenIds = new Set<string>();
+    const unicos = validos.map((p, index) => {
+      let uniqueId = p.id;
+      if (seenIds.has(uniqueId)) {
+        uniqueId = `${p.id}-dupl-${index}`;
+      }
+      seenIds.add(uniqueId);
+      return { ...p, id: uniqueId };
+    });
+
+    return [...unicos].sort((a, b) => {
       const timeA = a.data ? new Date(a.data).getTime() : 0;
       const timeB = b.data ? new Date(b.data).getTime() : 0;
       if (timeB !== timeA) {
@@ -58,7 +69,18 @@ export function getTextos(): Texto[] {
       (t): t is Texto => Boolean(t && typeof t === 'object' && t.id && t.titulo)
     );
 
-    return [...validos].sort((a, b) => {
+    // Salvaguarda contra IDs duplicados
+    const seenIds = new Set<string>();
+    const unicos = validos.map((t, index) => {
+      let uniqueId = t.id;
+      if (seenIds.has(uniqueId)) {
+        uniqueId = `${t.id}-dupl-${index}`;
+      }
+      seenIds.add(uniqueId);
+      return { ...t, id: uniqueId };
+    });
+
+    return [...unicos].sort((a, b) => {
       const timeA = a.data ? new Date(a.data).getTime() : 0;
       const timeB = b.data ? new Date(b.data).getTime() : 0;
       if (timeB !== timeA) {
